@@ -1,0 +1,47 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Cat // Inicialization class Cats
+{
+protected:
+	 string cName;
+public:
+	Cat() { cName = "Boris"; }
+};
+
+class Dog // Another to Dogs
+{
+protected:
+	string dName;
+public:
+	Dog() { dName = "Rex"; }
+};
+
+class Parrot // For Parrots
+{
+protected:
+	string pName;
+public:
+	Parrot() {pName = "Grisha"; }
+};
+
+struct Animal : public Cat, public Dog, public Parrot
+{
+	void getName()
+	{
+		cout << "Name of the cat - " << cName << endl;
+		cout << "Name of the dog - " << dName << endl;
+		cout << "Name of the parrot - " << pName << endl;
+	}
+	~Animal(){}
+};
+
+int main()
+{
+	Animal zoo;
+	zoo.getName();
+	system("pause");
+	return 0;
+}
